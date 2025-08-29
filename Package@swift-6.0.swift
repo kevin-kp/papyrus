@@ -10,7 +10,7 @@ let package = Package(
         .tvOS("13.0")
     ],
     products: [
-        .executable(name: "Example", targets: ["Example"]),
+        .executable(name: "PapyrusExample", targets: ["PapyrusExample"]),
         .library(name: "Papyrus", targets: ["Papyrus"]),
     ],
     dependencies: [
@@ -22,11 +22,11 @@ let package = Package(
         // MARK: Demo
 
         .executableTarget(
-            name: "Example",
+            name: "PapyrusExample",
             dependencies: [
                 "Papyrus"
             ],
-            path: "Example"
+            path: "PapyrusExample"
         ),
 
         // MARK: Library
