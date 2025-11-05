@@ -27,6 +27,16 @@ jobs:
               run: swift build -v
             - name: Test
               run: swift test -v
+    test-macos-xcode-26:
+        runs-on: macos-15
+        env:
+            DEVELOPER_DIR: /Applications/Xcode_26.0.app/Contents/Developer
+        steps:
+            - uses: actions/checkout@v3
+            - name: Build
+              run: swift build -v
+            - name: Test
+              run: swift test -v
     test-linux:
         runs-on: ubuntu-22.04
         strategy:
@@ -43,7 +53,7 @@ jobs:
         runs-on: ubuntu-24.04
         strategy:
             matrix:
-                swift: [6.0.1]
+                swift: [6.1.0]
         container: swift:${{ matrix.swift }}
         steps:
             - uses: actions/checkout@v3
